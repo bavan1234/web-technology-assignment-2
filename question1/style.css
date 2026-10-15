@@ -1,0 +1,219 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+:root {
+  --ink: #12352e;
+  --muted: #647f78;
+  --line: #cce9df;
+  --brand: #059669;
+  --brand-dark: #0f766e;
+  --mint: #a7f3d0;
+  --surface: #ffffff;
+  --danger: #dc2626;
+  --shadow: 0 24px 70px rgba(15, 118, 110, .14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 48px 18px;
+  display: grid;
+  place-items: center;
+  font-family: 'DM Sans', Arial, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(
+      ellipse at 8% 8%,
+      rgba(167, 243, 208, .75),
+      transparent 32%
+    ),
+    radial-gradient(
+      ellipse at 90% 90%,
+      rgba(153, 246, 228, .75),
+      transparent 34%
+    ),
+    #f3fbf8;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  width: min(100%, 660px);
+  margin: auto;
+  padding: clamp(24px, 5vw, 46px);
+  background: rgba(255, 255, 255, .94);
+  border: 1px solid rgba(255, 255, 255, .9);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 7px;
+  background: linear-gradient(
+    90deg,
+    #059669,
+    #0f766e,
+    #a7f3d0
+  );
+}
+
+.card:after {
+  content: none;
+}
+
+h1:before {
+  content: "STUDENT SERVICES";
+  display: block;
+  margin-bottom: 14px;
+  color: var(--brand-dark);
+  font: 800 .69rem 'DM Sans', sans-serif;
+  letter-spacing: .14em;
+}
+
+h1,
+h2 {
+  font-family: 'Manrope', 'DM Sans', sans-serif;
+  letter-spacing: -.045em;
+}
+
+h1 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.9rem, 5vw, 2.65rem);
+  line-height: 1.12;
+}
+
+.intro {
+  margin: 12px 0 28px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 18px;
+}
+
+label {
+  display: block;
+  align-self: end;
+  margin: 14px 0 8px;
+  font-size: .88rem;
+  font-weight: 700;
+  color: #28574b;
+}
+
+input,
+select {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 13px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #f9fefc;
+  color: var(--ink);
+  font: inherit;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+input[type=file] {
+  padding: 9px;
+  font-size: .83rem;
+}
+
+input:focus,
+select:focus {
+  outline: 0;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 4px rgba(5, 150, 105, .13);
+}
+
+#name,
+#roll,
+#email,
+#course,
+#password,
+#document {
+  grid-column: 1 / -1;
+}
+
+.error,
+.hint {
+  grid-column: 1 / -1;
+  display: block;
+  min-height: 14px;
+  margin-top: 5px;
+  font-size: .78rem;
+}
+
+.error {
+  color: var(--danger);
+}
+
+.hint {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+button {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin-top: 22px;
+  padding: 14px 18px;
+  border: 0;
+  border-radius: 12px;
+  color: #fff;
+  background: linear-gradient(
+    135deg,
+    #059669,
+    #0f766e
+  );
+  font: 700 1rem 'DM Sans', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(5, 150, 105, .22);
+  transition: transform .2s, box-shadow .2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 24px rgba(15, 118, 110, .3);
+}
+
+#successMessage {
+  grid-column: 1 / -1;
+  color: #065f46;
+  font-weight: 700;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #d1fae5;
+}
+
+@media (max-width: 520px) {
+  body {
+    padding: 18px 12px;
+  }
+
+  .card {
+    padding: 27px 20px;
+    border-radius: 22px;
+  }
+
+  form {
+    display: block;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}

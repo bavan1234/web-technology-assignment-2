@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Student Admission Portal</h1>
+    <p class="intro">Complete the form to register your details.</p>
+    <form id="registrationForm" novalidate>
+      <label for="name">Full name</label>
+      <input id="name" name="name" type="text" autocomplete="name" required>
+      <small class="error" id="nameError"></small>
+
+      <label for="roll">Roll number</label>
+      <input id="roll" name="roll" type="text" required>
+      <small class="error" id="rollError"></small>
+
+      <label for="email">Email address</label>
+      <input id="email" name="email" type="email" autocomplete="email" required>
+      <small class="error" id="emailError"></small>
+
+      <label for="course">Course</label>
+      <select id="course" name="course" required>
+        <option value="">Select a course</option>
+        <option>B.E. Computer Science and Engineering</option>
+        <option>B.E. Electronics and Communication Engineering</option>
+        <option>B.Tech. Information Technology</option>
+        <option>B.Tech. Artificial Intelligence and Data Science</option>
+      </select>
+      <small class="error" id="courseError"></small>
+
+      <label for="password">Create password</label>
+      <input id="password" name="password" type="password" autocomplete="new-password" required>
+      <small class="hint">At least 8 characters, including uppercase, lowercase and a number.</small>
+      <small class="error" id="passwordError"></small>
+
+      <label for="document">Upload document (PDF/JPG/PNG, max 2 MB)</label>
+      <input id="document" name="document" type="file" accept=".pdf,.jpg,.jpeg,.png" required>
+      <small class="error" id="documentError"></small>
+
+      <button type="submit">Register</button>
+      <p id="successMessage" role="status"></p>
+    </form>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
